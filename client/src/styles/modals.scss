@@ -1,0 +1,199 @@
+.ant-modal-root {
+    .home-modal {
+        &.users-list {
+            width: 400px !important;
+        }
+
+        .create-task-container {
+            .data-unit {
+                margin-bottom: 25px;
+    
+                &:last-child {
+                    margin-bottom: 0;
+                }
+    
+                .task-title-input {
+                    width: 50%;
+                }
+            }
+        }
+
+        .edit-task-container {
+            .data-unit {
+                margin-bottom: 25px;
+
+                &:first-child {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .data-sub-unit {
+                    .task-title-input {
+                        width: 220px;
+                    }
+        
+                    .task-developer-select {
+                        width: 220px;
+                    }
+                }
+    
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .delete-task-container {
+            .data-unit {
+                display: flex;
+
+                .anticon-alert {
+                    font-size: 35px;
+                    color: rgb(241, 185, 0);
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .create-project-container {
+            .data-unit {
+                margin-bottom: 25px;
+
+                &:first-child {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .data-sub-unit {
+                    .task-title-input {
+                        width: 220px;
+                    }
+        
+                    .task-developer-select {
+                        width: 220px;
+                    }
+                }
+    
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .update-project-container {
+            .data-unit {
+                margin-bottom: 25px;
+
+                &:first-child {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .data-sub-unit {
+                    .task-title-input {
+                        width: 220px;
+                    }
+                }
+
+                .project-manager-select {
+                    width: 250px;
+                }
+    
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .users {    
+            .user-list-head {
+                width: 100%;
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+                .ant-input-search {
+                    margin-bottom: 20px;
+                    width: 100%
+                }
+            }
+
+            
+            .users-list-container {
+                height: 500px;
+                overflow-y: scroll;
+                padding-right:10px;
+
+                .users-list {
+
+                    .user-list-item {
+                        display: flex;
+                        align-items: center;
+                        padding: 10px 15px;
+                        border-radius: 10px;
+                        margin-bottom: 10px;
+                        transition: 0.2s linear;
+    
+                        &.selected {
+                            background-color: #dfdfdf;
+                        }
+    
+                        &:hover {
+                            background: #cdcdcd;
+                        }
+    
+                        &:last-child {
+                            margin: 0;
+                        }
+    
+                        .item-head {
+                            width: 60px;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 0 5px;
+    
+                            .head-text {
+                                background-color: green;
+                                border-radius: 10px;
+                                text-align: center;
+                                color: #f4f4f4;
+                                font-weight: bold;
+                                padding: 10px;
+                                width: 100%;
+                            }
+                        }
+    
+                        .item-main-content {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+    
+                            .user-data {
+                                display: flex;
+                                flex-direction: column;
+                                padding: 5px 10px;
+                            }
+                        }
+    
+                        .edit-user-icon {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sub-modal-container {
+        width: 360px !important;
+
+        .user-edit-container {
+            .user-role-select {
+                width: 150px;
+            }
+        }
+    }
+}

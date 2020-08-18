@@ -1,0 +1,17 @@
+server:
+  port: 3001
+
+db:
+  type: 'postgres'
+  port: 5432
+  database: 'projer'
+
+jwt:
+  expiresIn: 43200
+
+mail:
+  service: 'Gmail'
+  port: 465
+  auth: 
+    user: 'projer.test@gmail.com'
+    pass: 'Dilemi45'

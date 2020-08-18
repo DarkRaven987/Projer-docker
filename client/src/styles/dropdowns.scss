@@ -1,0 +1,62 @@
+.ant-dropdown {
+    .home {
+        .edit-item {
+            color: rgb(0, 132, 255)
+        }
+
+        .delete-item {
+            color: red
+        }
+    }
+
+    .task-statuses {
+        .ant-dropdown-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 0;
+
+            .item-container {
+                width: 100%;
+                display: flex;
+                padding: 5px 12px;
+
+                .status-box {
+                    padding: 5px;
+                    color: #f4f4f4;
+                    border-radius: 7px;
+                    width: 100%;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-align: center;
+                    cursor: pointer;
+        
+                    &.open {
+                        background: orange;
+                    }
+        
+                    &.in_progress {
+                        background: #0089ff;
+                    }
+        
+                    &.testing {
+                        background: #9100ff;
+                    }
+        
+                    &.done {
+                        background: #03d300;
+                    }
+                }
+            }
+        }
+    }
+
+    .users-settings {
+        .edit-item {
+            color: rgb(0, 132, 255)
+        }
+
+        .delete-item {
+            color: red
+        }
+    }
+}

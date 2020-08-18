@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+    pg:
+        image: "postgres"
+        container_name: "postgres"
+        ports:
+            - "5555:5432"
+        environment: 
+            - POSTGRES_PASSWORD=postgres
+        volumes:
+            - ./db/pg_data:/var/lib/postgresql/data
+
+    api: 
+        container_name: "projer_server"
+        build: ./api/
+        volumes:
+            - /app/node_modules
+            - ./api:/app
+        links: 
+            - pg
+        ports: 
+            - "3001:8081"
+        environment:
+            - RDS_PASSWORD=admin
+            - RDS_USERNAME=admin
+            - RDS_HOSTNAME=postgres
+            - RDS_DB_NAME=projer
+            - ORIGIN=*
+    
+    client: 
+        build: 
+            dockerfile: Dockerfile
+            context: ./client/
+        volumes:
+            - ./client:/app
+        ports: 
+            - 3000:8081
+
+    nginx:
+        image: nginx:alpine
+        restart: always
+        volumes:
+            - ./client/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./client/build:/usr/share/nginx/html
+        working_dir: /usr/share/nginx/html
+        ports:
+            - 8081:8081
+        links:
+            - client
+            - api
+        

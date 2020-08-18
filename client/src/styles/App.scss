@@ -1,0 +1,36 @@
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgb(139, 139, 139);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  background: #f0ebeb;
+}
+
+.App {
+  text-align: center;
+  background: rgb(240, 235, 235);
+  width: 100%;
+
+  @import './pages/login.scss';
+  @import './pages/home.scss';
+  @import './pages/forgot-password.scss';
+}
+
+@import './modals.scss';
+@import './dropdowns.scss';
