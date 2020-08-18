@@ -28,7 +28,8 @@ services:
             - RDS_DB_NAME=projer
             - ORIGIN=*
     
-    client: 
+    client:
+        command: npm run build 
         build: 
             dockerfile: Dockerfile
             context: ./client/
@@ -47,6 +48,9 @@ services:
         ports:
             - 8081:8081
         links:
+            - client
+            - api
+        depends_on: 
             - client
             - api
         
