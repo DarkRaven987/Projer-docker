@@ -13,7 +13,6 @@ services:
 
     api: 
         container_name: "projer_server"
-        restart: 'always'
         build: ./api/
         volumes:
             - ./api:/app
@@ -29,7 +28,6 @@ services:
             - ORIGIN=*
     
     client:
-        command: npm run build 
         build: 
             dockerfile: Dockerfile
             context: ./client/
@@ -50,7 +48,6 @@ services:
         links:
             - client
             - api
-        depends_on: 
+        depends_on:
             - client
-            - api
         
