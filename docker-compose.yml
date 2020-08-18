@@ -13,17 +13,17 @@ services:
 
     api: 
         container_name: "projer_server"
+        restart: 'always'
         build: ./api/
         volumes:
-            - /app/node_modules
             - ./api:/app
         links: 
             - pg
         ports: 
             - "3001:8081"
         environment:
-            - RDS_PASSWORD=admin
-            - RDS_USERNAME=admin
+            - RDS_PASSWORD=postgres
+            - RDS_USERNAME=postgres
             - RDS_HOSTNAME=postgres
             - RDS_DB_NAME=projer
             - ORIGIN=*
