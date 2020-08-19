@@ -33,7 +33,7 @@ services:
         command: 'npm run build'
         volumes:
             - ./client:/app
-            - ./client/build:/usr/src/app/build
+            - ./client/build:/app/build
         ports: 
             - 3000:8081
 
@@ -46,9 +46,9 @@ services:
         working_dir: /usr/share/nginx/html
         ports:
             - 8081:8081
-        # links:
-        #     - client
-        #     - api
+        links:
+            - client
+            - api
         depends_on:
             - client
         
