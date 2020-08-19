@@ -33,7 +33,7 @@ services:
         command: 'npm run build'
         volumes:
             - ./client:/app
-            - ./client/build:/app/build
+            - ./client/build:/usr/src/app/build
         ports: 
             - 3000:8081
 
