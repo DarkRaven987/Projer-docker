@@ -13,6 +13,7 @@ services:
 
     api: 
         container_name: "projer_server"
+        restart: always
         build: ./api/
         volumes:
             - ./api:/app
@@ -28,11 +29,11 @@ services:
             - ORIGIN=*
     
     client:
-        build: 
-            dockerfile: Dockerfile
-            context: ./client/
+        build: ./client
+        command: 'npm run build'
         volumes:
             - ./client:/app
+            - ./client/build:/usr/src/app/build
         ports: 
             - 3000:8081
 
@@ -45,9 +46,9 @@ services:
         working_dir: /usr/share/nginx/html
         ports:
             - 8081:8081
-        links:
-            - client
-            - api
+        # links:
+        #     - client
+        #     - api
         depends_on:
             - client
         
